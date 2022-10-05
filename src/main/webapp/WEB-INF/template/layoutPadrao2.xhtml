@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{resources['image/eu.ico']}" />
+	<title><ui:insert name="titulo">CEF Controle de Estoque Farmacêutico</ui:insert></title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+	<header>
+		<p:ajaxStatus styleClass="ajax-status">
+			<f:facet name="start">
+				<h:graphicImage library="imagens" name="loading.gif" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>
+		<div style="float: left">
+			<h:link>
+				<h:graphicImage library="image" name="unicatolica.png"
+					style="margin-top:-35px; margin-left: 5px;" />
+			</h:link>
+		</div>
+		<div style="float: right; margin-right: 110px;">
+			<span
+				style="float: left; margin-right: 60px; height: 30px; line-height: 30px;">
+				Olá Usuário </span>
+			<h:form style="display:inline-block; margin-top: -5px;">
+				<p:menubar>
+					<p:submenu label="Cadastro">
+						<p:menuitem value="Cliente Externo" icon="ui-icon-document"
+							outcome="/cliente/CadastroClienteExterno" />
+						<p:separator />
+						<p:menuitem value="Cliente Interno" icon="ui-icon-document"
+							outcome="/cliente/CadastroClienteInterno" />
+						<p:separator />
+						<p:menuitem value="Fornecedor" icon="ui-icon-document"
+							outcome="/fornecedor/CadastroFornecedor" />
+						<p:separator />
+						<p:menuitem value="Medicamento" icon="ui-icon-document"
+							outcome="/medicamento/CadastroMedicamento" />
+						<p:separator />
+						<p:menuitem value="Medicamento" icon="ui-icon-document"
+							outcome="/medicamento/ConsultarMedicamento" />
+					</p:submenu>
+					<p:submenu label="Lista">
+						<p:menuitem value="Clientes Externos" />
+						<p:separator />
+						<p:menuitem value="Clientes Internos" />
+						<p:separator />
+						<p:menuitem value="Fornecedores" />
+						<p:separator />
+						<p:menuitem value="Medicamentos" />
+					</p:submenu>
+					<p:menuitem value="Logout" />
+				</p:menubar>
+			</h:form>
+		</div>
+		<div style="clear: both"></div>
+	</header>
+	<div id="conteudo">
+		<ui:insert name="corpo" />
+	</div>
+	<p:separator style="margin-top: 20px; " />
+	<footer>
+		Farmacia Universitária - Irmã Dulce <a
+			href="http://unicatolicaquixada.edu.br">www.unicatolicaquixada.edu.br</a>
+	</footer>
+</h:body>
+</html>

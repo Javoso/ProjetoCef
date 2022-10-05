@@ -1,0 +1,69 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.com/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:outputStylesheet library="css" name="style.css"/>
+	
+	<ui:define name="titulo">Consultar Medicamentos</ui:define>
+	
+	<ui:define name="corpo">
+	<h:form>
+		<h1>Consultar Medicamentos</h1>
+		
+		<p:toolbar style="margin-top:20px">
+			<p:toolbarGroup >
+				<p:commandButton value="Pesquisar"/>
+			</p:toolbarGroup>
+			<p:toolbarGroup align="right">
+				<p:button value="Novo" outcome="/medicamento/CadastroMedicamento"/>
+			</p:toolbarGroup>
+		</p:toolbar>
+		
+		<p:panelGrid columns="2" id="panel" style="width: 100%; margin-top: 20px;"
+			columnClasses="rotulo, campo">
+			
+			<p:outputLabel value="SKU" for="sku"/>
+			<p:inputText id="sku" size="20" maxlength="20"/>
+			
+			<p:outputLabel value="Nome" for="nome"/>
+			<p:inputText id="nome" size="20" maxlength="20"/>
+			
+		</p:panelGrid>
+	</h:form>
+		<p:dataTable id="medicamentosTable" value="#{pesquisaMedicamentosBean.medicamentosFiltrados}" var="medicamentos"
+			style="margin-top:20px" emptyMessage="Nenhum medicamento encontrado" rows="20" paginator="true"
+			paginatorAlwaysVisible="false" paginatorPosition="bottom">
+			
+			<p:column headerText="SKU" style="text-align:center; width:100px ">
+				<h:outputText value="123"/>
+			</p:column>
+			
+			<p:column headerText="Nome">
+				<h:outputText value="Loratadina"/>
+			</p:column>
+			
+			<p:column headerText="Categoria" style="text-align:center; width:250px;">
+				<h:outputText value="Anti-Alérgico"/>
+			</p:column>
+			
+			<p:column headerText="Valor unitário" style="text-align: center; width: 120px;">
+				<h:outputText value="R$10,20"/>
+			</p:column>
+			
+			<p:column headerText="Estoque" style="text-align:center; width:100px">
+				<h:outputText value="10"/>
+			</p:column>
+			
+			<p:column style="width: 100px; text-align: center">
+				<p:button icon="ui-icon-pencil" title="Editar"/>
+				<p:commandButton icon="ui-icon-trash" title="Excluir"/>
+			</p:column>
+		
+		</p:dataTable>
+		
+	</ui:define>
+	
+</ui:composition>	

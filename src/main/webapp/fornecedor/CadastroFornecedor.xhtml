@@ -1,0 +1,72 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.com/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:outputStylesheet library="css" name="style.css"/>
+	
+	<ui:define name="titulo">Cadastro de Fornecedor</ui:define>
+	
+	<ui:define name="corpo">
+	<h:form>
+		<h1>Novo Fornecedor</h1>
+		
+		<p:toolbar style="margin-top:20px">
+			<p:toolbarGroup >
+				<p:button value="Novo" outcome="/fornecedor/CadastroFornecedor"/>
+				<p:commandButton value="Salvar" id="botaoSalvar"/>
+			</p:toolbarGroup>
+			<p:toolbarGroup align="right">
+				<p:button value="Pesquisa"/>
+			</p:toolbarGroup>
+		</p:toolbar>
+		
+		<p:panelGrid columns="2" id="panel" style="width: 100%; margin-top: 20px;"
+			columnClasses="rotulo, campo">
+			
+			<p:outputLabel value="Nome" for="nome"/>
+			<p:inputText id="nome" size="50" maxlength="20"/>
+			
+			<p:outputLabel value="Nome Fantasia" for="nomeFantasia"/>
+			<p:inputText id="nomeFantasia" size="50" maxlength="20"/>
+			
+			<p:outputLabel value="CNPJ" for="cnpj"/>
+			<p:inputText id="cnpj" size="50" maxlength="20"/>
+			
+		</p:panelGrid>
+			
+			<!-- Criar ciaxa de dialogo para endereço -->
+			
+		<h1 style="margin-top:20px;">Endereço</h1>
+			
+		<p:panelGrid columns="2" id="endereco" style="width: 100%; margin-top: 20px;"
+			columnClasses="rotulo, campo">
+			
+			<p:outputLabel value="Rua" for="rua"/>
+			<p:inputText id="rua" size="50"/>
+			
+			<p:outputLabel value="Número" for="numero"/>
+			<p:inputText id="numero" size="50"/>
+			
+			<p:outputLabel value="Complemento" for="complemento"/>
+			<p:inputText id="complemento" size="50"/>
+			
+			<p:outputLabel value="Bairro" for="bairro"/>
+			<p:inputText id="bairro" size="50"/>
+			
+			<p:outputLabel value="CEP" for="cep"/>
+			<p:inputText id="cep" size="50"/>
+			
+			<p:outputLabel value="Cidade" for="cidade"/>
+			<p:inputText id="cidade" size="50"/>
+			
+			<p:outputLabel value="Estado" for="estado"/>
+			<p:inputText id="estado" size="50"/>
+			
+		</p:panelGrid>
+	</h:form>	
+	</ui:define>
+	
+</ui:composition>

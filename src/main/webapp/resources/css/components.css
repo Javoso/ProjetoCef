@@ -1,0 +1,63 @@
+.fa{
+	margin-left: -211px;
+	line-height: 10px;
+	margin-top: 10px;
+	color:black;	
+}
+.sidebar{
+	position: fixed;
+	top:45px;
+	bottom: 0;
+	left: 0;
+	width:130px;
+	margin-left: -130px;
+	transition: margin-left 0.5s;
+	background-color: #f6f6f6;
+	border-right: 1px solid #eaeaea;
+	z-index:9999;
+	overflow-y:auto;
+}
+.logo{
+	
+	float:left;
+	margin-left: 1.25rem;
+	transition: margin-left 0.8s
+}
+
+@media(max-width: 800px){
+	h1{
+	
+	font-size: 20px;
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px
+	}
+	.logo{
+	
+	float:right;
+	transition: margin-left 0.8s;
+	}
+	.sidebar{
+	margin-left:-130px;
+	}
+	.sidebar.is-toggled{
+	margin-left: 0px;
+	}
+	
+	#olaUsuario{
+	
+	font-size: 120%;
+	margin-left: 10%;
+	}
+	.fa{
+	float:left;
+	margin-left: 1.25rem;
+	transition: margin-left 0.5s;
+	
+	}
+	
+	.menu{
+	margin-top: -200px;
+		}
+	
+}

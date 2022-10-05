@@ -1,0 +1,97 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.com/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:outputStylesheet library="css" name="style.css" />
+
+	<ui:define name="titulo">Cadastro de medicamento</ui:define>
+
+	<ui:define name="corpo">
+		<f:metadata>
+			<f:event listener="#{cadastroMedicamentoBean.inicializar}"
+				type="preRenderView" />
+		</f:metadata>
+		<h:form>
+			<h1>Cadastro de medicamento</h1>
+
+			<p:messages autoUpdate="true" closable="true" />
+
+			<p:toolbar style="margin-top:20px">
+				<p:toolbarGroup>
+					<p:button value="Novo" outcome="/medicamento/CadastroMedicamento" />
+					<p:commandButton value="Salvar" id="botaoSalvar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Pesquisa"
+						outcome="/medicamento/ConsultarMedicamento" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="4" id="panel"
+				style="width: 100%; margin-top: 20px;"
+				columnClasses="rotulo, campo, rotulo, campo">
+
+				<p:outputLabel value="SKU" for="sku" />
+				<p:inputText id="sku" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.sku}" />
+
+				<p:outputLabel value="Nome" for="nome" />
+				<p:inputText id="nome" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.nome}" />
+
+				<p:outputLabel value="Marca" for="marca" />
+				<p:inputText id="marca" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.marca}" />
+
+				<p:outputLabel value="Lote" for="lote" />
+				<p:inputText id="lote" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.lote}" />
+
+				<p:outputLabel value="Data de Compra" for="dataCompra" />
+				<p:calendar id="dataCompra" />
+
+				<p:outputLabel value="Categoria" for="categoria" />
+				<p:selectOneMenu id="categoria">
+					<f:selectItems value="#{cadastroMedicamentoBean.categoriasRaizes}"
+						var="categoria" itemValue="#{categoria}"
+						itemLabel="#{categoria.descricao}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="subCategoria" for="subCategoria" />
+				<p:selectOneMenu id="subCategoria" size="20">
+
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Quantidade" for="quantidade" />
+				<p:inputText id="quantidade" size="20" maxlength="5"
+					value="#{cadastroMedicamentoBean.medicamento.quantidade}" />
+
+				<p:outputLabel value="Validade" for="validade" />
+				<p:calendar id="validade"
+					value="#{cadastroMedicamentoBean.medicamento.validade}" />
+					
+				<p:outputLabel value="Fornecedor" for="fornecedor" />
+				<p:selectOneMenu id="fornecedor" size="20"
+					value="#{cadastroMedicamentoBean.medicamento.fornecedor}">
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Preço" for="preco" />
+				<p:inputText id="preco" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.precoCompra}">
+					<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+				</p:inputText>
+
+				<p:outputLabel value="Preço para revenda" for="revenda" />
+				<p:inputText id="revenda" size="20" maxlength="20"
+					value="#{cadastroMedicamentoBean.medicamento.precoVenda}">
+					<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+				</p:inputText>
+
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
