@@ -24,13 +24,13 @@
 			<artifactId>all-themes</artifactId>
 			<version>1.0.10</version>
 		</dependency>
-		<!-- Implementação do Bean Validator -->
+
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.0.1.final</version>
-			<scope>compile</scope>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.1.3.Final</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>cupertino</artifactId>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.2.3.Final</version>
+			<version>5.4.24.Final</version>
 			<scope>compile</scope>
 		</dependency>
 		
@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.25</version>
+			<version>8.0.28</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -91,10 +91,11 @@
 
 
 		<!-- Log4j -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.19.0</version>
 		</dependency>
 
 		<!-- Commons Logging (Abstrai a implementação de logging) -->
